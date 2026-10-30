@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { roomApi } from '../services/api';
+import { offlineStorage } from '../services/offlineStorage';
 import type { Room } from '../types';
 import { useToastContext } from '../context/ToastContext';
 import { RoomCard } from '../components/RoomCard';
@@ -18,8 +19,8 @@ import {
 
 export const AdminRoomsPage: React.FC = () => {
   const { showToast } = useToastContext();
-  const [rooms, setRooms] = useState<Room[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [rooms, setRooms] = useState<Room[]>(() => offlineStorage.getRooms());
+  const [loading, setLoading] = useState(false);
 
   // Filters
   const [selectedFloor, setSelectedFloor] = useState<number | ''>('');
@@ -404,6 +405,7 @@ export const AdminRoomsPage: React.FC = () => {
       <RoomScheduleModal
         room={scheduleModalRoom}
         onClose={() => setScheduleModalRoom(null)}
+        onScheduleUpdated={fetchRooms}
       />
     </div>
   );

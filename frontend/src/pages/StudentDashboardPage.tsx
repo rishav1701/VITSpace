@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { dashboardApi } from '../services/api';
+import { offlineStorage } from '../services/offlineStorage';
 import type { StudentDashboard } from '../types';
 import {
   Building2,
@@ -20,8 +21,10 @@ export const StudentDashboardPage: React.FC = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  const [dashboard, setDashboard] = useState<StudentDashboard | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [dashboard, setDashboard] = useState<StudentDashboard | null>(() =>
+    offlineStorage.getStudentDashboard(user?.name || 'Rishav Raj', user?.dept || 'CSE')
+  );
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchDashboard = async () => {

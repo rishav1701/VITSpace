@@ -89,12 +89,21 @@ def _get_sqlite_path() -> Path:
     return p
 
 
-def init_sqlite_db():
+_sqlite_initialized = False
+
+
+def init_sqlite_db(force: bool = False):
     """Create SQLite tables and seed data if not already initialized."""
+    global _sqlite_initialized
+    if _sqlite_initialized and not force:
+        return
+
     db_path = _get_sqlite_path()
     conn = sqlite3.connect(db_path)
     try:
         conn.execute("PRAGMA foreign_keys = ON;")
+        conn.execute("PRAGMA journal_mode = WAL;")
+        conn.execute("PRAGMA synchronous = NORMAL;")
         cur = conn.cursor()
 
         # Create schema
@@ -168,6 +177,7 @@ def init_sqlite_db():
                 print(f"[WARN] Error seeding local database: {e}")
 
         conn.commit()
+        _sqlite_initialized = True
     finally:
         conn.close()
 

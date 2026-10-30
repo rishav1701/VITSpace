@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { availabilityApi } from '../services/api';
+import { offlineStorage } from '../services/offlineStorage';
 import type { AvailableRoom, Room, Day } from '../types';
 import { DAYS, DAY_LABELS, SLOT_TIMES } from '../types';
 import { RoomCard } from '../components/RoomCard';
@@ -30,9 +31,16 @@ export const FindRoomsPage: React.FC = () => {
   const [floor, setFloor] = useState<number | ''>(initialFloor ? Number(initialFloor) : '');
   const [roomType, setRoomType] = useState<string>(initialType);
 
-  const [rooms, setRooms] = useState<AvailableRoom[]>([]);
+  const [rooms, setRooms] = useState<AvailableRoom[]>(() =>
+    offlineStorage.calculateAvailability({
+      day_of_week: DAYS.includes(initialDay) ? initialDay : 'MON',
+      slot_number: initialSlot,
+      floor: initialFloor,
+      room_type: initialType,
+    })
+  );
   const [loading, setLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false);
+  const [hasSearched, setHasSearched] = useState(true);
   const [filterTab, setFilterTab] = useState<'all' | 'available' | 'occupied'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -287,6 +295,7 @@ export const FindRoomsPage: React.FC = () => {
       <RoomScheduleModal
         room={selectedRoom}
         onClose={() => setSelectedRoom(null)}
+        onScheduleUpdated={fetchAvailability}
       />
     </div>
   );

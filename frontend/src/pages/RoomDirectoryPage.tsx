@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { roomApi } from '../services/api';
+import { offlineStorage } from '../services/offlineStorage';
 import type { Room } from '../types';
 import { RoomCard } from '../components/RoomCard';
 import { RoomScheduleModal } from '../components/RoomScheduleModal';
 import { Building2, Search, Filter, Layers, Loader2 } from 'lucide-react';
 
 export const RoomDirectoryPage: React.FC = () => {
-  const [rooms, setRooms] = useState<Room[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [rooms, setRooms] = useState<Room[]>(() => offlineStorage.getRooms());
+  const [loading, setLoading] = useState(false);
   const [selectedFloor, setSelectedFloor] = useState<number | ''>('');
   const [selectedType, setSelectedType] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState('');
@@ -133,6 +134,7 @@ export const RoomDirectoryPage: React.FC = () => {
       <RoomScheduleModal
         room={selectedRoom}
         onClose={() => setSelectedRoom(null)}
+        onScheduleUpdated={fetchRooms}
       />
     </div>
   );

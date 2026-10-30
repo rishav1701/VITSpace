@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { scheduleApi, roomApi } from '../services/api';
+import { offlineStorage } from '../services/offlineStorage';
 import type { Schedule, Room, Day } from '../types';
 import { DAYS, DAY_LABELS, SLOT_TIMES } from '../types';
 import { useToastContext } from '../context/ToastContext';
+import { RoomScheduleModal } from '../components/RoomScheduleModal';
 import {
   CalendarDays,
   Plus,
@@ -13,14 +15,16 @@ import {
   Building,
   AlertTriangle,
   Pencil,
+  Calendar,
 } from 'lucide-react';
 
 export const AdminSchedulesPage: React.FC = () => {
   const { showToast } = useToastContext();
 
-  const [schedules, setSchedules] = useState<Schedule[]>([]);
-  const [rooms, setRooms] = useState<Room[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [schedules, setSchedules] = useState<Schedule[]>(() => offlineStorage.getSchedules());
+  const [rooms, setRooms] = useState<Room[]>(() => offlineStorage.getRooms());
+  const [loading, setLoading] = useState(false);
+  const [timetableModalRoom, setTimetableModalRoom] = useState<Room | null>(null);
 
   // Filters
   const [filterDay, setFilterDay] = useState<string>('');
@@ -176,13 +180,30 @@ export const AdminSchedulesPage: React.FC = () => {
           </p>
         </div>
 
-        <button
-          onClick={handleOpenAddModal}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold shadow-lg shadow-amber-600/20 transition-all self-start sm:self-auto"
-        >
-          <Plus className="w-4 h-4" />
-          Assign New Slot
-        </button>
+        <div className="flex items-center gap-2.5">
+          <button
+            onClick={() => {
+              if (rooms.length > 0) {
+                const targetRoom = filterRoomId
+                  ? rooms.find((r) => r.room_id === Number(filterRoomId)) || rooms[0]
+                  : rooms[0];
+                setTimetableModalRoom(targetRoom);
+              }
+            }}
+            className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition-all self-start sm:self-auto"
+            title="Open Interactive Weekly Matrix"
+          >
+            <Calendar className="w-4 h-4 text-blue-400" />
+            Interactive Timetable
+          </button>
+          <button
+            onClick={handleOpenAddModal}
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold shadow-lg shadow-amber-600/20 transition-all self-start sm:self-auto"
+          >
+            <Plus className="w-4 h-4" />
+            Assign New Slot
+          </button>
+        </div>
       </div>
 
       {/* Filter Bar */}
@@ -457,6 +478,13 @@ export const AdminSchedulesPage: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Interactive Timetable Modal */}
+      <RoomScheduleModal
+        room={timetableModalRoom}
+        onClose={() => setTimetableModalRoom(null)}
+        onScheduleUpdated={fetchData}
+      />
     </div>
   );
 };

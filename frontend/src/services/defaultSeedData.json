@@ -1,0 +1,473 @@
+{
+  "rooms": [
+    {
+      "room_id": 5,
+      "room_number": "116",
+      "block": "PRP",
+      "floor": 1,
+      "room_type": "Classroom",
+      "capacity": 60
+    },
+    {
+      "room_id": 8,
+      "room_number": "117",
+      "block": "PRP",
+      "floor": 1,
+      "room_type": "Lab",
+      "capacity": 40
+    },
+    {
+      "room_id": 6,
+      "room_number": "118",
+      "block": "PRP",
+      "floor": 1,
+      "room_type": "Lab",
+      "capacity": 40
+    },
+    {
+      "room_id": 1,
+      "room_number": "125",
+      "block": "PRP",
+      "floor": 1,
+      "room_type": "Classroom",
+      "capacity": 60
+    },
+    {
+      "room_id": 10,
+      "room_number": "136",
+      "block": "PRP",
+      "floor": 1,
+      "room_type": "Lab",
+      "capacity": 40
+    },
+    {
+      "room_id": 13,
+      "room_number": "PRP 423",
+      "block": "PRP",
+      "floor": 1,
+      "room_type": "Classroom",
+      "capacity": 60
+    },
+    {
+      "room_id": 3,
+      "room_number": "230",
+      "block": "PRP",
+      "floor": 2,
+      "room_type": "Classroom",
+      "capacity": 60
+    },
+    {
+      "room_id": 12,
+      "room_number": "PRP 268",
+      "block": "PRP",
+      "floor": 2,
+      "room_type": "Classroom",
+      "capacity": 60
+    },
+    {
+      "room_id": 9,
+      "room_number": "354",
+      "block": "PRP",
+      "floor": 3,
+      "room_type": "Lab",
+      "capacity": 40
+    },
+    {
+      "room_id": 2,
+      "room_number": "410",
+      "block": "PRP",
+      "floor": 4,
+      "room_type": "Classroom",
+      "capacity": 60
+    },
+    {
+      "room_id": 4,
+      "room_number": "465",
+      "block": "PRP",
+      "floor": 4,
+      "room_type": "Classroom",
+      "capacity": 60
+    },
+    {
+      "room_id": 7,
+      "room_number": "555",
+      "block": "PRP",
+      "floor": 5,
+      "room_type": "Lab",
+      "capacity": 40
+    },
+    {
+      "room_id": 11,
+      "room_number": "626",
+      "block": "PRP",
+      "floor": 6,
+      "room_type": "Classroom",
+      "capacity": 60
+    }
+  ],
+  "schedules": [
+    {
+      "schedule_id": 6,
+      "room_id": 6,
+      "day_of_week": "MON",
+      "slot_number": 5,
+      "start_time": "13:00",
+      "end_time": "14:40",
+      "room_number": "118",
+      "floor": 1,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 7,
+      "room_id": 7,
+      "day_of_week": "MON",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "room_number": "555",
+      "floor": 5,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 8,
+      "room_id": 8,
+      "day_of_week": "MON",
+      "slot_number": 3,
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "room_number": "117",
+      "floor": 1,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 9,
+      "room_id": 9,
+      "day_of_week": "MON",
+      "slot_number": 6,
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "room_number": "354",
+      "floor": 3,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 10,
+      "room_id": 10,
+      "day_of_week": "MON",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "room_number": "136",
+      "floor": 1,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 11,
+      "room_id": 1,
+      "day_of_week": "TUE",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "room_number": "125",
+      "floor": 1,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 12,
+      "room_id": 2,
+      "day_of_week": "TUE",
+      "slot_number": 3,
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "room_number": "410",
+      "floor": 4,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 13,
+      "room_id": 3,
+      "day_of_week": "TUE",
+      "slot_number": 5,
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "room_number": "230",
+      "floor": 2,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 14,
+      "room_id": 4,
+      "day_of_week": "TUE",
+      "slot_number": 6,
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "room_number": "465",
+      "floor": 4,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 15,
+      "room_id": 5,
+      "day_of_week": "TUE",
+      "slot_number": 2,
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "room_number": "116",
+      "floor": 1,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 16,
+      "room_id": 6,
+      "day_of_week": "TUE",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "room_number": "118",
+      "floor": 1,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 17,
+      "room_id": 7,
+      "day_of_week": "TUE",
+      "slot_number": 5,
+      "start_time": "13:00",
+      "end_time": "14:40",
+      "room_number": "555",
+      "floor": 5,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 18,
+      "room_id": 8,
+      "day_of_week": "TUE",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "room_number": "117",
+      "floor": 1,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 19,
+      "room_id": 1,
+      "day_of_week": "WED",
+      "slot_number": 3,
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "room_number": "125",
+      "floor": 1,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 20,
+      "room_id": 2,
+      "day_of_week": "WED",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "room_number": "410",
+      "floor": 4,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 21,
+      "room_id": 3,
+      "day_of_week": "WED",
+      "slot_number": 2,
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "room_number": "230",
+      "floor": 2,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 22,
+      "room_id": 4,
+      "day_of_week": "WED",
+      "slot_number": 4,
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "room_number": "465",
+      "floor": 4,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 23,
+      "room_id": 5,
+      "day_of_week": "WED",
+      "slot_number": 5,
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "room_number": "116",
+      "floor": 1,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 24,
+      "room_id": 9,
+      "day_of_week": "WED",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "room_number": "354",
+      "floor": 3,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 26,
+      "room_id": 1,
+      "day_of_week": "THU",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "room_number": "125",
+      "floor": 1,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 27,
+      "room_id": 3,
+      "day_of_week": "THU",
+      "slot_number": 3,
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "room_number": "230",
+      "floor": 2,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 28,
+      "room_id": 4,
+      "day_of_week": "THU",
+      "slot_number": 5,
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "room_number": "465",
+      "floor": 4,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 29,
+      "room_id": 5,
+      "day_of_week": "THU",
+      "slot_number": 6,
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "room_number": "116",
+      "floor": 1,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 30,
+      "room_id": 6,
+      "day_of_week": "THU",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "room_number": "118",
+      "floor": 1,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 31,
+      "room_id": 7,
+      "day_of_week": "THU",
+      "slot_number": 3,
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "room_number": "555",
+      "floor": 5,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 32,
+      "room_id": 8,
+      "day_of_week": "THU",
+      "slot_number": 5,
+      "start_time": "13:00",
+      "end_time": "14:40",
+      "room_number": "117",
+      "floor": 1,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 33,
+      "room_id": 2,
+      "day_of_week": "FRI",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "room_number": "410",
+      "floor": 4,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 34,
+      "room_id": 3,
+      "day_of_week": "FRI",
+      "slot_number": 2,
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "room_number": "230",
+      "floor": 2,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 35,
+      "room_id": 4,
+      "day_of_week": "FRI",
+      "slot_number": 3,
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "room_number": "465",
+      "floor": 4,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 36,
+      "room_id": 5,
+      "day_of_week": "FRI",
+      "slot_number": 5,
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "room_number": "116",
+      "floor": 1,
+      "room_type": "Classroom"
+    },
+    {
+      "schedule_id": 37,
+      "room_id": 8,
+      "day_of_week": "FRI",
+      "slot_number": 1,
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "room_number": "117",
+      "floor": 1,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 38,
+      "room_id": 9,
+      "day_of_week": "FRI",
+      "slot_number": 5,
+      "start_time": "13:00",
+      "end_time": "14:40",
+      "room_number": "354",
+      "floor": 3,
+      "room_type": "Lab"
+    },
+    {
+      "schedule_id": 39,
+      "room_id": 10,
+      "day_of_week": "FRI",
+      "slot_number": 6,
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "room_number": "136",
+      "floor": 1,
+      "room_type": "Lab"
+    }
+  ]
+}

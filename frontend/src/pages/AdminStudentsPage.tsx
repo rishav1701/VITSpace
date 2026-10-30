@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { studentApi } from '../services/api';
+import { offlineStorage } from '../services/offlineStorage';
 import type { Student } from '../types';
 import { useToastContext } from '../context/ToastContext';
 import {
@@ -18,9 +19,9 @@ import {
 export const AdminStudentsPage: React.FC = () => {
   const { showToast } = useToastContext();
 
-  const [students, setStudents] = useState<Student[]>([]);
-  const [departments, setDepartments] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [students, setStudents] = useState<Student[]>(() => offlineStorage.getStudents());
+  const [departments, setDepartments] = useState<string[]>(['CSE', 'ECE', 'MECH', 'EEE']);
+  const [loading, setLoading] = useState(false);
 
   // Filters
   const [selectedDept, setSelectedDept] = useState<string>('');

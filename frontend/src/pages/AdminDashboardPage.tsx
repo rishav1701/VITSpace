@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { dashboardApi } from '../services/api';
+import { offlineStorage } from '../services/offlineStorage';
 import type { AdminDashboard, FloorSummary } from '../types';
 import {
   Building2,
@@ -16,9 +17,9 @@ import {
 } from 'lucide-react';
 
 export const AdminDashboardPage: React.FC = () => {
-  const [stats, setStats] = useState<AdminDashboard | null>(null);
-  const [floors, setFloors] = useState<FloorSummary[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState<AdminDashboard | null>(() => offlineStorage.getAdminDashboard());
+  const [floors, setFloors] = useState<FloorSummary[]>(() => offlineStorage.getAdminDashboard().floors);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
