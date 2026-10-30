@@ -8,14 +8,16 @@ rooms, timetable entries, and student records through a role-restricted
 dashboard.
 
 The application uses a React + TypeScript frontend, a Python FastAPI
-REST API, and an Oracle relational database. The backend queries Oracle
-for room, schedule, student, dashboard, and availability data.
+REST API, and a flexible database architecture supporting a zero-configuration
+local SQLite database (`vitspace.db`) by default, as well as remote/cloud
+Oracle Database.
 
-> **Scope note:** This README describes the implementation found in this
-> repository. The SQL file `docs/schema.sql` creates the `AUTH` table;
-> the `ROOM`, `ROOM_SCHEDULE`, and `STUDENTS` tables are treated as
-> existing database tables. Set up those tables in your Oracle schema
-> before running the application.
+> **Local database note:** By default, VITSpace runs with a local SQLite
+> database (`vitspace.db`) that auto-seeds all rooms, schedules, and demo
+> accounts on initial startup—no external database servers or cloud accounts
+> are required. If you prefer to connect to an Oracle Database, set
+> `DB_TYPE=oracle` in `backend/.env`.
+
 
 ------------------------------------------------------------------------
 

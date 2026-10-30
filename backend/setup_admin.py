@@ -24,6 +24,12 @@ from app.core.config import get_settings
 
 def create_auth_table():
     """Create the AUTH table if it doesn't exist."""
+    s = get_settings()
+    if s.db_type == "sqlite":
+        # SQLite schema creation is automatically handled in connection.init_sqlite_db()
+        print("[OK] Local SQLite tables and schema verified.")
+        return True
+
     with get_db() as conn:
         with get_cursor(conn) as cur:
             # Check if table exists

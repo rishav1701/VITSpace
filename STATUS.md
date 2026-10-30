@@ -11,20 +11,20 @@
 - **Location:** PRP Academic Block (Periyar Building), VIT Vellore
 - **Repo:** [VITSpace](https://github.com/rishav1701/VITSpace)
 - **Tech Stack:**
-  - **Backend:** FastAPI, Python 3.11, python-oracledb (Thin Mode), Pydantic v2, JWT HttpOnly Auth, Passlib/Bcrypt, SlowAPI Rate Limiting
-  - **Database:** Oracle Database (ROOM, ROOM_SCHEDULE, STUDENTS, AUTH tables)
+  - **Backend:** FastAPI, Python 3.11, Pydantic v2, JWT HttpOnly Auth, Passlib/Bcrypt, SlowAPI Rate Limiting
+  - **Database:** Local SQLite (`vitspace.db`, zero setup, offline ready) with dual-mode support for Oracle Database (`python-oracledb` Thin Mode)
   - **Frontend:** React 19, TypeScript, Vite, Tailwind CSS v4, React Router v7, Lucide Icons, Axios
 
 ---
 
-**Phase: 8/8 Completed — System Live & Connected to Oracle Cloud DB**
+**Phase: Local Database Integration Completed — 100% Offline & Presentation Ready**
 
-The application is fully integrated with the user's remote Oracle Database (`db.freesql.com:2484/26ai_un3c1`).
-- `ROOM`: 11 live rooms loaded across 6 floors.
-- `ROOM_SCHEDULE`: 34 live schedules mapped across slots and days.
-- `STUDENT`: Integrated with user authentication.
-- `AUTH`: Initialized and seeded with default admin and demo student.
-- End-to-end API test completed: 200 OK on auth, rooms, schedules, and dashboard analytics.
+The application now supports an instant local database (SQLite `vitspace.db`) with zero external installation, plus seamless toggle to Oracle Cloud.
+- `ROOM`: 13 rooms seeded across 6 floors.
+- `ROOM_SCHEDULE`: 33 schedules mapped across slots and days.
+- `STUDENTS`: Demo student record loaded (`21BCE0001` - Rishav Raj, CSE).
+- `AUTH`: Pre-configured admin (`admin` / `admin123`) and student (`21BCE0001` / `student123`).
+- End-to-end API test completed: 200 OK across all auth, rooms, schedules, and dashboard analytics endpoints.
 
 ---
 
